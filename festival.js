@@ -181,3 +181,18 @@ console.log("Reward: Backstage Upgrade");
   }
 }
 
+// Challenge 11
+
+for (let minutes = 10; minutes >= 1; minutes--) {
+  if (minutes === 1) {
+    console.log("Festival closes in 1 minute...");
+  } else {
+    console.log("Festival closes in " + minutes + " minutes...");
+  }
+  if (minutes === 5) {
+    console.log("WARNING: LAST ENTRY HAS ENDED");
+  } else if (minutes === 2) {
+    console.log("PLEASE PROCEED TO THE EXIT");
+  }
+}
+console.log("FESTIVAL CLOSED");
