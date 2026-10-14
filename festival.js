@@ -32,3 +32,21 @@ for (let person of attendees) {
   }
 }
 
+// Challenge 3
+console.log("\n--- Challenge 3 ---");
+for (let person of attendees) {
+  if (person.age >= 18 && person.hasTicket === true) {
+    console.log(person.name);
+    console.log("Ticket: " + person.ticket);
+    switch (person.ticket) {
+      case "VIP":
+        console.log("Wristband: GOLD WRISTBAND");
+        break;
+      case "General":
+        console.log("Wristband: BLUE WRISTBAND");
+        break;
+      default:
+        console.log("UNKNOWN TICKET TYPE");
+    }
+  }
+}
