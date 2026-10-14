@@ -149,5 +149,18 @@ for (let person of attendees) {
   console.log("Highest spender: " + topSpender.name + " (R" + topSpender.spend + ")");
 }
 
+// Challenge 9
+
+let biggestSpender = attendees[0];
+for (let person of attendees) {
+  if (person.spend > biggestSpender.spend) {
+    biggestSpender = person;
+  }
+}
+console.log("===== TOP CUSTOMER =====");
+console.log("Name: " + biggestSpender.name);
+console.log("Amount Spent: R" + biggestSpender.spend);
+console.log("Reward: Backstage Upgrade");
+
 
 
