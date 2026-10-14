@@ -79,3 +79,12 @@ for (let person of attendees) {
 if (found === false) {
   console.log("ATTENDEE NOT FOUND: " + searchName);
 }
+
+// Challenge 6: Security Fast Lane 
+console.log("\n--- Challenge 6 ---");
+for (let person of attendees) {
+  if (person.hasTicket === false) {
+    continue; 
+  }
+  console.log("Checking " + person.name + "...");
+}
