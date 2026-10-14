@@ -60,3 +60,22 @@ for (let person of attendees) {
     console.log(person.name + " -> VIP LOUNGE ACCESS: DENIED");
   }
 }
+
+// Challenge 5
+console.log("\n--- Challenge 5 ---");
+let searchName = "Zanele"; 
+let found = false;
+for (let person of attendees) {
+  if (person.name === searchName) {
+    console.log("ATTENDEE FOUND");
+    console.log("Name: " + person.name);
+    console.log("Age: " + person.age);
+    console.log("Ticket: " + person.ticket);
+    console.log("Valid Ticket: " + person.hasTicket);
+    found = true;
+    break; 
+  }
+}
+if (found === false) {
+  console.log("ATTENDEE NOT FOUND: " + searchName);
+}
