@@ -80,11 +80,27 @@ if (found === false) {
   console.log("ATTENDEE NOT FOUND: " + searchName);
 }
 
-// Challenge 6: Security Fast Lane 
+// Challenge 6
 console.log("\n--- Challenge 6 ---");
 for (let person of attendees) {
   if (person.hasTicket === false) {
     continue; 
   }
   console.log("Checking " + person.name + "...");
+}
+
+// Challenge 7
+console.log("\n--- Challenge 7 ---");
+for (let person of attendees) {
+  let voucher;
+  if (person.spend >= 1000) {
+    voucher = "R200 food voucher";
+  } else if (person.spend >= 500) {
+    voucher = "R100 food voucher";
+  } else if (person.spend >= 300) {
+    voucher = "R50 food voucher";
+  } else {
+    voucher = "No voucher";
+  }
+  console.log(person.name + " (R" + person.spend + ") -> " + voucher);
 }
