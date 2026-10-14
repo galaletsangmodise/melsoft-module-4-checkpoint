@@ -10,7 +10,7 @@ let attendees = [
 ];
 
 // Challenge 1
-console.log("\n--- Challenge 1 ---");
+
 for (let person of attendees) {
   console.log("========================");
   console.log("Name: " + person.name);
@@ -21,7 +21,7 @@ for (let person of attendees) {
 }
 
 // Challenge 2
-console.log("\n--- Challenge 2 ---");
+
 for (let person of attendees) {
   if (person.age >= 18 && person.hasTicket === true) {
     console.log(person.name + " -> ENTRY APPROVED");
@@ -33,7 +33,7 @@ for (let person of attendees) {
 }
 
 // Challenge 3
-console.log("\n--- Challenge 3 ---");
+
 for (let person of attendees) {
   if (person.age >= 18 && person.hasTicket === true) {
     console.log(person.name);
@@ -52,7 +52,7 @@ for (let person of attendees) {
 }
 
 // Challenge 4
-console.log("\n--- Challenge 4 ---");
+
 for (let person of attendees) {
   if (person.hasTicket === true && person.ticket === "VIP" && person.age >= 18) {
     console.log(person.name + " -> VIP LOUNGE ACCESS: APPROVED");
@@ -62,7 +62,7 @@ for (let person of attendees) {
 }
 
 // Challenge 5
-console.log("\n--- Challenge 5 ---");
+
 let searchName = "Zanele"; 
 let found = false;
 for (let person of attendees) {
@@ -81,7 +81,7 @@ if (found === false) {
 }
 
 // Challenge 6
-console.log("\n--- Challenge 6 ---");
+
 for (let person of attendees) {
   if (person.hasTicket === false) {
     continue; 
@@ -90,7 +90,7 @@ for (let person of attendees) {
 }
 
 // Challenge 7
-console.log("\n--- Challenge 7 ---");
+
 for (let person of attendees) {
   let voucher;
   if (person.spend >= 1000) {
@@ -104,3 +104,50 @@ for (let person of attendees) {
   }
   console.log(person.name + " (R" + person.spend + ") -> " + voucher);
 }
+
+// Challenge 8
+
+{
+  let validTickets = 0;
+  let invalidTickets = 0;
+  let under18 = 0;
+  let vipCount = 0;
+  let generalCount = 0;
+  let totalSpend = 0;
+  let topSpender = attendees[0];
+
+  for (let person of attendees) {
+    if (person.hasTicket === true) {
+      validTickets++;
+    } else {
+      invalidTickets++;
+    }
+    if (person.age < 18) {
+      under18++;
+    }
+    if (person.ticket === "VIP") {
+      vipCount++;
+    } else if (person.ticket === "General") {
+      generalCount++;
+    }
+    totalSpend += person.spend;
+    if (person.spend > topSpender.spend) {
+      topSpender = person;
+    }
+  }
+
+  let averageSpend = totalSpend / attendees.length;
+
+  console.log("Total attendees: " + attendees.length);
+  console.log("Valid tickets: " + validTickets);
+  console.log("Invalid tickets: " + invalidTickets);
+  console.log("Under 18: " + under18);
+  console.log("General ticket holders: " + generalCount);
+  console.log("VIP ticket holders: " + vipCount);
+  console.log("Total spent: R" + totalSpend);
+  console.log("Average spend: R" + averageSpend.toFixed(2));
+  console.log("Highest spender: " + topSpender.name + " (R" + topSpender.spend + ")");
+}
+
+
+
