@@ -50,3 +50,13 @@ for (let person of attendees) {
     }
   }
 }
+
+// Challenge 4
+console.log("\n--- Challenge 4 ---");
+for (let person of attendees) {
+  if (person.hasTicket === true && person.ticket === "VIP" && person.age >= 18) {
+    console.log(person.name + " -> VIP LOUNGE ACCESS: APPROVED");
+  } else {
+    console.log(person.name + " -> VIP LOUNGE ACCESS: DENIED");
+  }
+}
