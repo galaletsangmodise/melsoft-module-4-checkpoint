@@ -162,5 +162,22 @@ console.log("Name: " + biggestSpender.name);
 console.log("Amount Spent: R" + biggestSpender.spend);
 console.log("Reward: Backstage Upgrade");
 
+// Challenge 10:
 
+{
+  let capacity = 5;
+  let peopleInside = 0;
+  for (let person of attendees) {
+    if (person.age >= 18 && person.hasTicket === true) {
+      peopleInside++;
+      console.log(person.name + " entered.");
+      console.log("People inside: " + peopleInside + " / " + capacity);
+      if (peopleInside === capacity) {
+        console.log("VENUE FULL");
+        console.log("STOP ADMITTING PEOPLE");
+        break;
+      }
+    }
+  }
+}
 
